@@ -59,12 +59,14 @@ SQL Analytics Queries
      ↓
 Matplotlib Dashboards
 
-Data Cleaning & Business Rules Implemented
+Data Cleaning & Business Rules Implemented  
+
 1.Duplicate Handling
    Duplicates removed using:
      *Date
      *Symbol
-Only first occurrence retained.
+Only first occurrence retained.  
+
 
 2. Missing Value Treatment
 Column	     Handling Method
@@ -77,7 +79,6 @@ low_price	     Recalculated using min(open_price, close_price
 Ensured:
 *high_price ≥ open_price AND close_price
 *low_price ≤ open_price AND close_price
-
 Auto-corrected where violated.
 
 4.Trend Classification
@@ -91,6 +92,23 @@ daily_return = 0	NO_CHANGE
 *Moving Average Calculation (7-Day, 30-Day)
 *Volume vs Price Movement Analysis
 *Volatility Identification
+
+
+--Dashboard Interpretation
+->Best Performing Stock by Average Return
+This chart shows the average daily return for each stock. From the visualization, AAPL shows the highest average return compared to MSFT and GOOG. This indicates stronger overall performance during the dataset period.
+
+<img width="505" height="415" alt="Screenshot (109)" src="https://github.com/user-attachments/assets/55879cbb-e198-4437-a0d0-541d41af3e0f" />
+
+->Volume Spike Visualization
+The volume spike graph highlights days where trading volume was unusually high. These spikes may indicate major market events, institutional trading activity, or strong investor interest on specific days.
+
+<img width="885" height="450" alt="Screenshot (110)" src="https://github.com/user-attachments/assets/22002a9d-45e7-470f-ad4b-391311abaf39" />
+
+-->UP vs DOWN Trend Ratio
+This chart shows the number of days each stock moved upward versus downward. The results indicate that all three stocks have slightly more UP days than DOWN days, suggesting overall positive market movement during the dataset period.
+
+<img width="515" height="409" alt="Screenshot (111)" src="https://github.com/user-attachments/assets/77d66e2f-2dff-4538-8684-3bede2a31859" />
 
 --How to Run This Project
 Step 1 — Install Requirements
@@ -107,3 +125,4 @@ mysql+mysqlconnector://username:password@localhost:3306/stock_analysis
 --Step 4 — Run Jupyter Notebook
 Run cells sequentially:
 Data Loading,Data Cleaning,Business Rule Implementation,Database Loading,Dashboard Generation
+
